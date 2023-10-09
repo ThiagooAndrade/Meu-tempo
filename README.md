@@ -1,2 +1,2 @@
 # Meu tempo
- Web site para ver como está o tempo
+ Web site previsão do tempo
