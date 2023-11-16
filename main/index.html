@@ -7,31 +7,52 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
     <title>Meu tempo</title>
-    
+
 </head>
 
 <body>
     <div class="container">
-        <div class="search-city">
+        <div class="search-box">
             <input type="text" placeholder="Pesquise sua localização">
             <button class="fa-sharp fa-solid fa-magnifying-glass"></button>
         </div>
 
         <div class="not_found">
-            <img src="imgs/erro-404.jpg" alt="">
+            <img src="./imgs/not found.png" alt="">
             <p>Localização não encontrada</p>
 
         </div>
 
         <div class="weather-box">
-            
+            <img src="" alt="">
+            <p class="temperatura"></p>
+            <p class="descricao"></p>
+
+        </div>
+
+        <div class="weather-details">
+            <div class="umidade">
+                <i class="fa-solid fa-water"></i>
+                <div class="text">
+                    <span></span>
+                    <p>Umidade</p>
+                </div>
+            </div>
+
+            <div class="Vento">
+                <i class="fa-solid fa-wind"></i>
+                <div class="text">
+                    <span></span>
+                    <p>Velocidade do Vento</p>
+                </div>
+            </div>
+
         </div>
     </div>
 
-
-
     <script src="https://kit.fontawesome.com/b0a027b3f8.js" crossorigin="anonymous"></script>
-    
+
+
 </body>
 
 </html>
