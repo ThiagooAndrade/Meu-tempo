@@ -4,8 +4,66 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <script src="script.js"></script>
+
     <title>Meu tempo</title>
   </head>
-  <body></body>
+  <body>
+    <main class="container content">
+      <div class="container-search-city content">
+        <label for="city">City <p> => </p</label>
+        <div class="container-input">
+          <ion-icon class="icon" name="location-sharp"></ion-icon>
+          <input
+            type="search"
+            name="city"
+            placeholder="Digite o nome da cidade"
+          />
+         <button id="btnSubmit"><ion-icon  name="search-sharp"></ion-icon></button>
+          
+            
+        </div>
+      </div>
+      <div class="weather-container">
+        <img src="" alt="">
+          <p class="temperature"></p>
+          <p class="description"></p>
+      </div>
+
+      <div class="weather-details">
+        <div class="humidity">
+          <ion-icon class="icon" name="water-outline"></ion-icon>
+          <div class="text">
+            <span>a</span>
+            <p>Humidity</p>
+          </div>
+        </div>
+        <div class="wind">
+          <img class="icon" src="assets/wind-icon.svg">
+          <div class="text">
+            <span>a</span>
+            <p>Wind Speed</p>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <ul>
+        <li><a href="https://github.com/ThiagooAndrade" target="_blank"><ion-icon name="logo-github"></ion-icon></a></li>
+        <li><a href="www.linkedin.com/in/
+thiago-andrade-060b54290
+" target="_blank"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+      </ul>
+      <p>Made by <span>Thiago</span></p>
+    </footer>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="script.js"></script>
+  </body>
 </html>

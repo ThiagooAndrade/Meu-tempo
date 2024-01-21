@@ -1,0 +1,171 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Fira code";
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-color: #40a2d8;
+}
+
+body {
+  height: 100vh;
+  background: var(--bg-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* estilos que se repetem */
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  height: 60%;
+  width: 33%;
+  background-color: white;
+  border-radius: 16px;
+  position: relative;
+}
+
+.container-search-city {
+  align-items: center;
+  justify-content: center;
+}
+
+.container-search-city label {
+  font-size: 2em;
+  display: block;
+  text-align: center;
+}
+
+.container-search-city label p {
+  rotate: 90deg;
+}
+
+.container-search-city {
+  padding: 1.5em;
+}
+
+.container-search-city input {
+  padding: 10px;
+  font-size: 16px;
+}
+
+.container-search-city input::placeholder {
+  width: 100%;
+  font-size: 16px;
+}
+
+.container-input {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+#btnSubmit {
+  background-color: #fae7f3;
+  border: 2px solid transparent;
+  transition: border 0.3s;
+  display: flex;
+  align-items: center;
+
+  font-size: 24px;
+  padding: 8px 10px;
+  cursor: pointer;
+}
+
+#btnSubmit:hover {
+  border: 2px solid #365486;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  align-items: center;
+  bottom: 0;
+  justify-content: center;
+  width: 100%;
+}
+
+footer ul {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+
+footer ul li {
+  list-style: none;
+}
+
+footer ul li a {
+  font-size: 32px;
+}
+
+.weather-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.weather-details {
+  position: absolute;
+  bottom: 5%;
+  width: 100%;
+  display: flex;
+
+  justify-content: space-around;
+}
+
+.humidity {
+  display: flex;
+  gap: 10px;
+}
+
+.wind {
+  gap: 10px;
+  display: flex;
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+  font-size: 50px;
+}
+
+.text span {
+  visibility: hidden;
+}
+
+@media screen and (max-width: 1240px) {
+  .container {
+    width: 80%;
+    max-width: 700px;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .container-search-city input {
+    width: 50%;
+  }
+
+  .container-search-city input::placeholder {
+    color: transparent;
+  }
+
+  .container-search-city label p {
+    display: none;
+  }
+
+  .icon {
+    width: 40px;
+  }
+}
