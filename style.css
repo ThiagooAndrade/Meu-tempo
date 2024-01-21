@@ -25,7 +25,7 @@ body {
 }
 
 .container {
-  height: 60%;
+  height: 70%;
   width: 33%;
   background-color: white;
   border-radius: 16px;
@@ -56,7 +56,12 @@ body {
   font-size: 16px;
 }
 
+.img {
+  width: 300px;
+}
+
 .container-search-city input::placeholder {
+  text-transform: capitalize;
   width: 100%;
   font-size: 16px;
 }
@@ -74,14 +79,16 @@ body {
   transition: border 0.3s;
   display: flex;
   align-items: center;
-
+  border-radius: 50%;
   font-size: 24px;
   padding: 8px 10px;
   cursor: pointer;
 }
 
 #btnSubmit:hover {
-  border: 2px solid #365486;
+  color: #fff;
+  background-color: rgb(30, 30, 30);
+  border: 2px solid #2e5fb4;
 }
 
 footer {
@@ -114,6 +121,10 @@ footer ul li a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.weather-container {
+  /*  a*/
 }
 
 .weather-details {

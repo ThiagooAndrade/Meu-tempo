@@ -10,7 +10,10 @@
   <body>
     <main class="container content">
       <div class="container-search-city content">
-        <label for="city">City <p> => </p</label>
+        <label for="city"
+          >City
+          <p>=></p></label
+        >
         <div class="container-input">
           <ion-icon class="icon" name="location-sharp"></ion-icon>
           <input
@@ -18,15 +21,20 @@
             name="city"
             placeholder="Digite o nome da cidade"
           />
-         <button id="btnSubmit"><ion-icon  name="search-sharp"></ion-icon></button>
-          
-            
+          <button id="btnSubmit">
+            <ion-icon name="search-sharp"></ion-icon>
+          </button>
         </div>
       </div>
+
+      <div class="not-found">
+        <img class="img" src="assets/undraw_page_not_found_re_e9o6.svg" />
+        <p>Oops! Invalid location :/</p>
+      </div>
       <div class="weather-container">
-        <img src="" alt="">
-          <p class="temperature"></p>
-          <p class="description"></p>
+        <img class="img" src="" />
+        <p class="temperature"></p>
+        <p class="description"></p>
       </div>
 
       <div class="weather-details">
@@ -38,7 +46,7 @@
           </div>
         </div>
         <div class="wind">
-          <img class="icon" src="assets/wind-icon.svg">
+          <img class="icon" src="assets/wind-icon.svg" />
           <div class="text">
             <span>a</span>
             <p>Wind Speed</p>
@@ -48,10 +56,20 @@
     </main>
     <footer>
       <ul>
-        <li><a href="https://github.com/ThiagooAndrade" target="_blank"><ion-icon name="logo-github"></ion-icon></a></li>
-        <li><a href="www.linkedin.com/in/
+        <li>
+          <a href="https://github.com/ThiagooAndrade" target="_blank"
+            ><ion-icon name="logo-github"></ion-icon
+          ></a>
+        </li>
+        <li>
+          <a
+            href="www.linkedin.com/in/
 thiago-andrade-060b54290
-" target="_blank"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+"
+            target="_blank"
+            ><ion-icon name="logo-linkedin"></ion-icon
+          ></a>
+        </li>
       </ul>
       <p>Made by <span>Thiago</span></p>
     </footer>
