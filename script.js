@@ -74,7 +74,8 @@ buttonSearchCity.addEventListener("click", () => {
       wind.innerHTML = `${json.wind.speed} KM/h`;
       weatherContainer.style.display = "flex";
       weatherDetails.style.display = "flex";
-      description.innerHTML = `${json.weather[0].description}`.toUpperCase();
+      description.innerHTML = `${json.weather[0].description}`;
+      description.style.textTransform = "capitalize";
       country.innerHTML = `${json.sys.country}`;
 
       weatherContainer.classList.add("fadeIn");
