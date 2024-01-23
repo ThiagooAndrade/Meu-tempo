@@ -1,7 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap");
+
 * {
   margin: 0;
   padding: 0;
-  font-family: "Fira code";
+  font-family: "Inter", sans-serif;
   box-sizing: border-box;
 }
 
@@ -62,8 +64,9 @@ body {
   text-align: center;
 }
 
+.error404,
 .img {
-  width: 60%;
+  width: 50%;
 }
 
 .container-search-city input::placeholder {
@@ -123,17 +126,24 @@ footer ul li a {
 
 .weather-container {
   width: 100%;
-  display: none; /**none */
+  display: none; /**none  para flex*/
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 30px;
+}
+
+.weather-container div {
+  display: flex;
+
+  gap: 50px;
 }
 
 .weather-details {
   position: absolute;
   bottom: 5%;
   width: 100%;
-  display: flex;
+  display: none;
 
   justify-content: space-around;
 }
@@ -148,6 +158,11 @@ footer ul li a {
   display: flex;
 }
 
+.humidity-text,
+.wind-text {
+  visibility: hidden;
+}
+
 .icon {
   width: 50px;
   height: 50px;
@@ -158,6 +173,18 @@ footer ul li a {
   visibility: hidden;
 }
 
+.fadeIn {
+  animation: 0.5s fadeIn forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes fadeIn {
+  to {
+    scale: 1;
+    opacity: 1;
+  }
+}
+
 @media screen and (max-width: 1240px) {
   .container {
     width: 80%;
@@ -166,6 +193,13 @@ footer ul li a {
 }
 
 @media screen and (max-width: 520px) {
+  .container {
+    width: 100%;
+  }
+
+  .img {
+    width: 60%;
+  }
   .container-search-city input {
     width: 50%;
   }
