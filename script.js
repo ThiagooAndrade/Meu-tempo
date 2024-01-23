@@ -66,19 +66,20 @@ buttonSearchCity.addEventListener("click", () => {
         default:
           img.src = "";
       }
-
-      temperature.innerHTML = `${parseInt(json.main.temp)}<span>°C</span>`;
-      humidity.style.visibility = "visible";
-      wind.style.visibility = "visible";
-      humidity.innerHTML = `${json.main.humidity}%`;
-      wind.innerHTML = `${json.wind.speed} KM/h`;
-      weatherContainer.style.display = "flex";
-      weatherDetails.style.display = "flex";
-      description.innerHTML = `${json.weather[0].description}`;
-      description.style.textTransform = "capitalize";
-      country.innerHTML = `${json.sys.country}`;
-
       weatherContainer.classList.add("fadeIn");
       weatherDetails.classList.add("fadeIn");
+
+      weatherContainer.style.display = "flex";
+      weatherDetails.style.display = "flex";
+
+      temperature.innerHTML = `${parseInt(json.main.temp)}<span>°C</span>`;
+      humidity.innerHTML = `${json.main.humidity}%`;
+      wind.innerHTML = `${json.wind.speed} KM/h`;
+      description.innerHTML = `${json.weather[0].description}`;
+
+      humidity.style.visibility = "visible";
+      wind.style.visibility = "visible";
+
+      description.style.textTransform = "capitalize";
     });
 });

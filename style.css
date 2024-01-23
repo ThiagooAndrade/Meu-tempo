@@ -52,7 +52,6 @@ body {
 
 .container-search-city {
   padding: 1.5em;
-  
 }
 
 .container-search-city input {
@@ -140,6 +139,17 @@ footer ul li a {
   gap: 50px;
 }
 
+.temperature,
+.description {
+  font-size: 1.5em;
+}
+
+.weather-container,
+.weather-details {
+  scale: 0;
+  opacity: 0;
+}
+
 .weather-details {
   position: absolute;
   bottom: 5%;
@@ -175,8 +185,8 @@ footer ul li a {
 }
 
 .fadeIn {
-  animation: 0.5s fadeIn forwards;
-  animation-delay: 0.5s;
+  animation: fadeIn 0.5s forwards;
+  animation-delay: 0.2s;
 }
 
 @keyframes fadeIn {
