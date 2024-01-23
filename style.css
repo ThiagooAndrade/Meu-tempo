@@ -25,11 +25,12 @@ body {
 }
 
 .container {
-  height: 70%;
+  height: 30%;
   width: 33%;
   background-color: white;
   border-radius: 16px;
   position: relative;
+  transition: height 0.5s;
 }
 
 .container-search-city {
@@ -56,8 +57,13 @@ body {
   font-size: 16px;
 }
 
+.not-found {
+  display: none;
+  text-align: center;
+}
+
 .img {
-  width: 300px;
+  width: 60%;
 }
 
 .container-search-city input::placeholder {
@@ -117,14 +123,10 @@ footer ul li a {
 
 .weather-container {
   width: 100%;
-  display: flex;
+  display: none; /**none */
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.weather-container {
-  /*  a*/
 }
 
 .weather-details {
