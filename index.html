@@ -1,87 +1,85 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
 
-    <title>Meu tempo</title>
-  </head>
-  <body>
-    <main class="container content">
-      <div class="container-search-city content">
-        <label for="city"
-          >Localização
-          <p>=></p></label
-        >
-        <div class="container-input">
-          <ion-icon class="icon" name="location-sharp"></ion-icon>
-          <input
-            type="search"
-            name="city"
-            placeholder="Digite o nome da cidade"
-          />
-          <button id="btnSubmit">
-            <ion-icon name="search-sharp"></ion-icon>
-          </button>
-        </div>
-      </div>
+        <title>Meu tempo</title>
+    </head>
+    <body>
+        <main class="container content">
+            <div class="container-search-city content">
+                <label for="city">Localização </label>
+                <ion-icon class="icon" name="arrow-down"></ion-icon>
+                <div class="container-input">
+                    <ion-icon class="icon" name="location-sharp"></ion-icon>
+                    <input
+                        type="search"
+                        name="city"
+                        placeholder="Digite o nome da cidade"
+                    />
+                    <button id="btnSubmit">
+                        <ion-icon name="search-sharp"></ion-icon>
+                    </button>
+                </div>
+            </div>
 
-      <div class="not-found">
-        <img class="error404" src="assets/undraw_page_not_found.svg" />
-        <p>Localização errada!</p>
-      </div>
-      <div class="weather-container">
-        <img class="img" />
-        <div>
-          <p class="temperature"></p>
-          <p class="description"></p>
-        </div>
-      </div>
+            <div class="not-found">
+                <img class="error404" src="assets/undraw_page_not_found.svg" />
+                <p>Localização errada!</p>
+            </div>
+            <div class="weather-container">
+                <img class="img" />
+                <div>
+                    <p class="temperature"></p>
+                    <p class="description"></p>
+                </div>
+            </div>
 
-      <div class="weather-details">
-        <div class="humidity">
-          <ion-icon class="icon" name="water-outline"></ion-icon>
-          <div class="">
-            <span class="humidity-text">a</span>
-            <p>Humidade</p>
-          </div>
-        </div>
-        <div class="wind">
-          <img class="icon" src="assets/wind-icon.svg" />
-          <div class="text">
-            <span class="wind-text">a</span>
-            <p>Vento</p>
-          </div>
-        </div>
-      </div>
-    </main>
-    <footer>
-      <ul>
-        <li>
-          <a href="https://github.com/ThiagooAndrade" target="_blank"
-            ><ion-icon name="logo-github"></ion-icon
-          ></a>
-        </li>
-        <li>
-          <a
-            href="https://linkedin.com/in/thiago-andrade-060b54290"
-            target="_blank"
-            ><ion-icon name="logo-linkedin"></ion-icon
-          ></a>
-        </li>
-      </ul>
-      <p>Made by <span>Thiago</span></p>
-    </footer>
+            <div class="weather-details">
+                <div class="humidity">
+                    <ion-icon class="icon" name="water-outline"></ion-icon>
+                    <div class="">
+                        <span class="humidity-text">a</span>
+                        <p>Humidade</p>
+                    </div>
+                </div>
+                <div class="wind">
+                    <img class="icon" src="assets/wind-icon.svg" />
+                    <div class="text">
+                        <span class="wind-text">a</span>
+                        <p>Vento</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <ul>
+                <li>
+                    <a href="https://github.com/ThiagooAndrade" target="_blank"
+                        ><ion-icon name="logo-github"></ion-icon
+                    ></a>
+                </li>
+                <li>
+                    <a
+                        href="https://linkedin.com/in/thiago-andrade-060b54290"
+                        target="_blank"
+                        ><ion-icon name="logo-linkedin"></ion-icon
+                    ></a>
+                </li>
+            </ul>
+            <p>Made by <span>Thiago</span></p>
+        </footer>
 
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
-    ></script>
-    <script src="script.js"></script>
-  </body>
+        <script
+            type="module"
+            src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+        ></script>
+        <script
+            nomodule
+            src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+        ></script>
+        <script src="script.js"></script>
+    </body>
 </html>
