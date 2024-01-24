@@ -1,8 +1,6 @@
 const buttonSearchCity = document.getElementById("btnSubmit");
 const buttonLocation = document.getElementById("btnLocation");
 
-
-
 buttonSearchCity.addEventListener("click", () => {
     const city = document.querySelector(".container-input input");
     searchCity(city.value);
@@ -21,8 +19,6 @@ async function getLocation() {
     city.value = data.city;
     searchCity(data.city); // passa como parametro a cidade do usuario
 }
-
-
 
 async function searchCity(city) {
     const weatherAPIKey = "3d2d4073bc04d77eb884358684f252cc";
