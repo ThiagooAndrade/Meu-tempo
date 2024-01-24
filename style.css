@@ -1,229 +1,243 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap");
 
 * {
-  margin: 0;
-  padding: 0;
-  font-family: "Inter", sans-serif;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Inter", sans-serif;
+    box-sizing: border-box;
 }
 
 :root {
-  --bg-color: #40a2d8;
+    --bg-color: #40a2d8;
 }
 
 body {
-  height: 100vh;
-  background: var(--bg-color);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+    height: 100vh;
+    background: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 /* estilos que se repetem */
 .content {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 .container {
-  height: 30%;
-  width: 33%;
-  background-color: white;
-  border-radius: 16px;
-  position: relative;
-  transition: height 0.5s;
+    height: 30%;
+    width: 33%;
+    background-color: white;
+    border-radius: 16px;
+    position: relative;
+    transition: height 0.5s;
 }
 
 .container-search-city {
-  align-items: center;
-  justify-content: center;
+    align-items: center;
+    justify-content: center;
 }
 
 .container-search-city label {
-  font-size: 2em;
-  display: block;
-  text-align: center;
+    font-size: 2em;
+    display: block;
+    text-align: center;
 }
 
 .container-search-city label p {
-  rotate: 90deg;
+    rotate: 90deg;
 }
 
 .container-search-city {
-  padding: 1.5em;
+    padding: 1.5em;
 }
 
 .container-search-city input {
-  padding: 10px;
-  font-size: 16px;
+    padding: 10px;
+    font-size: 16px;
 }
 
 .not-found {
-  display: none;
-  text-align: center;
+    display: none;
+    text-align: center;
 }
 
 .error404,
 .img {
-  width: 50%;
+    width: 50%;
 }
 
 .container-search-city input::placeholder {
-  text-transform: capitalize;
-  width: 100%;
-  font-size: 16px;
+    text-transform: capitalize;
+    width: 100%;
+    font-size: 16px;
 }
 
 .container-input {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
 }
 
 #btnSubmit {
-  background-color: #fae7f3;
-  border: 2px solid transparent;
-  transition: border 0.3s;
-  display: flex;
-  align-items: center;
-  border-radius: 50%;
-  font-size: 24px;
-  padding: 8px 10px;
-  cursor: pointer;
+    background-color: #fae7f3;
+    border: 2px solid transparent;
+    transition: border 0.3s;
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 24px;
+    padding: 8px 10px;
+    cursor: pointer;
 }
 
 #btnSubmit:hover {
-  color: #fff;
-  background-color: rgb(30, 30, 30);
-  border: 2px solid #2e5fb4;
+    color: #fff;
+    background-color: rgb(30, 30, 30);
+    border: 2px solid #2e5fb4;
 }
 
 footer {
-  display: flex;
-  flex-direction: column;
-  position: fixed;
-  align-items: center;
-  bottom: 0;
-  justify-content: center;
-  width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    align-items: center;
+    bottom: 0;
+    justify-content: center;
+    width: 100%;
 }
 
 footer ul {
-  display: flex;
-  flex-direction: row;
-  gap: 16px;
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
 }
 
 footer ul li {
-  list-style: none;
+    list-style: none;
 }
 
 footer ul li a {
-  font-size: 32px;
+    font-size: 32px;
 }
 
 .weather-container {
-  width: 100%;
-  display: none; /**none  para flex*/
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 30px;
+    width: 100%;
+    display: none; /**none  para flex*/
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
 }
 
 .weather-container div {
-  display: flex;
+    display: flex;
 
-  gap: 50px;
+    gap: 50px;
 }
 
 .temperature,
 .description {
-  font-size: 1.5em;
+    font-size: 1.5em;
 }
 
 .weather-container,
 .weather-details {
-  scale: 0;
-  opacity: 0;
+    scale: 0;
+    opacity: 0;
 }
 
 .weather-details {
-  position: absolute;
-  bottom: 5%;
-  width: 100%;
-  display: none;
+    position: absolute;
+    bottom: 5%;
+    width: 100%;
+    display: none;
 
-  justify-content: space-around;
+    justify-content: space-around;
 }
 
 .humidity {
-  display: flex;
-  gap: 10px;
+    display: flex;
+    gap: 10px;
 }
 
 .wind {
-  gap: 10px;
-  display: flex;
+    gap: 10px;
+    display: flex;
 }
 
 .humidity-text,
 .wind-text {
-  visibility: hidden;
+    visibility: hidden;
 }
 
 .icon {
-  width: 50px;
-  height: 50px;
-  font-size: 50px;
+    width: 50px;
+    height: 50px;
+    font-size: 50px;
 }
 
 .text span {
-  visibility: hidden;
+    visibility: hidden;
 }
 
 .fadeIn {
-  animation: fadeIn 0.5s forwards;
-  animation-delay: 0.2s;
+    animation: fadeIn 0.5s forwards;
+    animation-delay: 0.2s;
+}
+
+#btnLocation {
+    cursor: pointer;
 }
 
 @keyframes fadeIn {
-  to {
-    scale: 1;
-    opacity: 1;
-  }
+    to {
+        scale: 1;
+        opacity: 1;
+    }
 }
 
 @media screen and (max-width: 1240px) {
-  .container {
-    width: 80%;
-    max-width: 700px;
-  }
+    .container {
+        width: 80%;
+        max-width: 700px;
+    }
+
+    .img {
+        width: 35%;
+    }
 }
 
-@media screen and (max-width: 520px) {
-  .container {
-    width: 100%;
-  }
+@media screen and (min-width: 461px) and (max-width: 570px) {
+    .img {
+        width: 60%;
+    }
+}
 
-  .img {
-    width: 60%;
-  }
-  .container-search-city input {
-    width: 50%;
-  }
+@media screen and (max-width: 460px) {
+    .container {
+        width: 100%;
+    }
 
-  .container-search-city input::placeholder {
-    color: transparent;
-  }
+    .img {
+        width: 60%;
+    }
+    .container-search-city input {
+        width: 50%;
+    }
 
-  .container-search-city label p {
-    display: none;
-  }
+    .container-search-city input::placeholder {
+        color: transparent;
+    }
 
-  .icon {
-    width: 40px;
-  }
+    .container-search-city label p {
+        display: none;
+    }
+
+    .icon {
+        width: 40px;
+    }
 }

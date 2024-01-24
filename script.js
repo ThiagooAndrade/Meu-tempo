@@ -1,38 +1,48 @@
 const buttonSearchCity = document.getElementById("btnSubmit");
+const buttonLocation = document.getElementById("btnLocation");
 
-const notFound = document.querySelector(".not-found");
-const weatherContainer = document.querySelector(".weather-container");
-const weatherDetails = document.querySelector(".weather-details");
-const error404 = document.querySelector(".error404");
-const img = document.querySelector(".img");
-const temperature = document.querySelector(".temperature");
-const description = document.querySelector(".description");
-const humidity = document.querySelector(".humidity-text");
-const wind = document.querySelector(".wind-text");
+buttonSearchCity.addEventListener("click", () => {
+    const city = document.querySelector(".container-input input");
+    searchCity(city.value);
+});
 
-buttonSearchCity.addEventListener("click", searchCity);
-const city = document.querySelector(".container-input input");
+buttonLocation.addEventListener("click", getLocation);
 
-async function searchCity() {
-    const APIKey = "3d2d4073bc04d77eb884358684f252cc";
+async function getLocation() {
+    const ipAPIKey = "ef031848e8289989b40183cdc92d44fc9f89069e4478791753659f47";
+    const ipAPIURL = `https://api.ipdata.co?api-key=${ipAPIKey}`;
+
+    const response = await fetch(ipAPIURL);
+    let data = await response.json();
+
+    const city = document.querySelector(".container-input input");
+    city.value = data.city;
+    searchCity(data.city);
+}
+
+async function searchCity(city) {
+    const weatherAPIKey = "3d2d4073bc04d77eb884358684f252cc";
+    const weatherAPIURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&lang=pt_br&appid=${weatherAPIKey}`;
 
     const container = document.querySelector(".container");
+    const weatherDetails = document.querySelector(".weather-details");
+    const notFound = document.querySelector(".not-found");
+    const weatherContainer = document.querySelector(".weather-container");
 
     if ((notFound.style.display = "block")) {
         notFound.style.display = "none";
     }
 
-    if (city === "") {
+    if (city.value === "") {
         return;
     }
 
-    const data = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&units=metric&lang=pt_br&appid=${APIKey}`
-    );
+    const response = await fetch(weatherAPIURL);
 
-    const json = await data.json();
+    let data = await response.json();
 
-    if (json.cod === "404") {
+    if (data.cod === "404") {
+        const error404 = document.querySelector(".error404");
         container.style.height = "75%";
         weatherContainer.style.display = "none";
         weatherDetails.style.display = "none";
@@ -42,7 +52,8 @@ async function searchCity() {
     }
     container.style.height = "75%";
 
-    switch (json.weather[0].main) {
+    const img = document.querySelector(".img");
+    switch (data.weather[0].main) {
         case "Clear":
             img.src = "assets/clear.png";
             break;
@@ -70,19 +81,25 @@ async function searchCity() {
         default:
             img.src = "";
     }
+
     weatherContainer.classList.add("fadeIn");
     weatherDetails.classList.add("fadeIn");
 
     weatherContainer.style.display = "flex";
     weatherDetails.style.display = "flex";
 
-    temperature.innerHTML = `${parseInt(json.main.temp)}<span>°C</span>`;
-    humidity.innerHTML = `${json.main.humidity}%`;
-    wind.innerHTML = `${json.wind.speed} KM/h`;
-    description.innerHTML = `${json.weather[0].description}`;
+    const temperature = document.querySelector(".temperature");
+    temperature.innerHTML = `${parseInt(data.main.temp)}<span>°C</span>`;
 
-    humidity.style.visibility = "visible";
-    wind.style.visibility = "visible";
-
+    const description = document.querySelector(".description");
+    description.innerHTML = `${data.weather[0].description}`;
     description.style.textTransform = "capitalize";
+
+    const humidity = document.querySelector(".humidity-text");
+    humidity.innerHTML = `${data.main.humidity}%`;
+    humidity.style.visibility = "visible";
+
+    const wind = document.querySelector(".wind-text");
+    wind.innerHTML = `${data.wind.speed} KM/h`;
+    wind.style.visibility = "visible";
 }
