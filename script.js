@@ -9,15 +9,27 @@ buttonSearchCity.addEventListener("click", () => {
 buttonLocation.addEventListener("click", getLocation);
 
 async function getLocation() {
-    const ipAPIKey = "ef031848e8289989b40183cdc92d44fc9f89069e4478791753659f47";
-    const ipAPIURL = `https://api.ipdata.co?api-key=${ipAPIKey}`;
+    if ("geolocation" in navigator) {
+        navigator.geolocation.getCurrentPosition(async (position) => {
+            const lat = position.coords.latitude;
+            const long = position.coords.longitude;
 
-    const response = await fetch(ipAPIURL);
-    let data = await response.json(); // dados da localização do usuário
+            const nominatimURL = `https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${long}&format=jsonv2&addressdetails=0&zoom=12`;
+            const response = await fetch(nominatimURL);
+            const data = await response.json();
 
-    const city = document.querySelector(".container-input input");
-    city.value = data.city;
-    searchCity(data.city); // passa como parametro a cidade do usuario
+            const resultCity = data.name;
+
+            const city = document.querySelector(".container-input input");
+            city.value = resultCity;
+            searchCity(resultCity); // passa como parametro a cidade do usuario
+            /* geolocation is available */
+        });
+    } else {
+        alert(
+            "Perdão, mas os serviços de geolocalização nao são suportados pelo seu navegador."
+        );
+    }
 }
 
 async function searchCity(city) {
@@ -39,7 +51,7 @@ async function searchCity(city) {
 
     const response = await fetch(weatherAPIURL);
 
-    let data = await response.json();
+    const data = await response.json();
 
     if (data.cod === "404") {
         const error404 = document.querySelector(".error404");
