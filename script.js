@@ -3,30 +3,36 @@ const buttonLocation = document.getElementById("btnLocation");
 
 buttonSearchCity.addEventListener("click", () => {
     const city = document.querySelector(".container-input input");
-    searchCity(city.value);
+    if (city.value !== "") {
+        searchCity(city.value);
+    }
 });
 
 buttonLocation.addEventListener("click", getLocation);
 
-async function getLocation() {
+function getLocation() {
     if ("geolocation" in navigator) {
         navigator.geolocation.getCurrentPosition(async (position) => {
-            const lat = position.coords.latitude;
-            const long = position.coords.longitude;
+            try {
+                const lat = position.coords.latitude;
+                const long = position.coords.longitude;
 
-            const nominatimURL = `https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${long}&format=jsonv2&addressdetails=0&zoom=12`;
-            const response = await fetch(nominatimURL);
-            const data = await response.json();
+                const nominatimURL = `https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${long}&format=jsonv2&addressdetails=0&zoom=10`;
+                const response = await fetch(nominatimURL);
+                const data = await response.json();
+                console.log(data);
+                const resultCity = data.name;
 
-            const resultCity = data.name;
-
-            const city = document.querySelector(".container-input input");
-            city.value = resultCity;
-            searchCity(resultCity); // passa como parametro a cidade do usuario
-            /* geolocation is available */
+                const city = document.querySelector(".container-input input");
+                city.value = resultCity;
+                searchCity(resultCity); // passa como parametro a cidade do usuario
+                /* geolocation is available */
+            } catch {
+                window.alert("Ocorreu um erro");
+            }
         });
     } else {
-        alert(
+        window.alert(
             "Perdão, mas os serviços de geolocalização nao são suportados pelo seu navegador."
         );
     }
@@ -43,10 +49,6 @@ async function searchCity(city) {
 
     if ((notFound.style.display = "block")) {
         notFound.style.display = "none";
-    }
-
-    if (city.value === "") {
-        return;
     }
 
     const response = await fetch(weatherAPIURL);
