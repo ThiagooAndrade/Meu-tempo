@@ -20,66 +20,52 @@ body {
     align-items: center;
 }
 
-/* estilos que se repetem */
-.content {
+.container {
+    height: 20%;
     display: flex;
     flex-direction: column;
-}
-
-.container {
-    height: 30%;
-    width: 33%;
+    width: 90%;
     background-color: white;
+    padding: 1rem;
     border-radius: 16px;
     position: relative;
     transition: height 0.5s;
 }
 
 .container-search-city {
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
 .container-search-city label {
-    font-size: 2em;
+    font-size: 2rem;
+    text-align: center;
     display: block;
-    text-align: center;
-}
-
-.container-search-city label p {
-    rotate: 90deg;
-}
-
-.container-search-city {
-    padding: 1.5em;
-}
-
-.container-search-city input {
-    padding: 10px;
-    font-size: 16px;
-}
-
-.not-found {
-    display: none;
-    text-align: center;
-}
-
-.error404,
-.img {
-    width: 50%;
-}
-
-.container-search-city input::placeholder {
-    text-transform: capitalize;
-    width: 100%;
-    font-size: 16px;
 }
 
 .container-input {
+    width: 100%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    gap: 20px;
+    justify-content: space-around;
+}
+
+#btnLocation {
+    cursor: pointer;
+}
+
+.container-input input {
+    padding: 0.5rem;
+    font-size: 0.75rem;
+    width: 60%;
+}
+
+.container-input input::placeholder {
+    text-transform: capitalize;
+    /* width: 100%; nao sei oq muda */
+    font-size: 0.75rem;
 }
 
 #btnSubmit {
@@ -98,6 +84,76 @@ body {
     color: #fff;
     background-color: rgb(30, 30, 30);
     border: 2px solid #2e5fb4;
+}
+
+.not-found {
+    display: none;
+    text-align: center;
+    padding-top: 5rem;
+}
+
+.icon {
+    width: 40px;
+    height: 40px;
+    font-size: 50px;
+}
+
+.error404 {
+    width: 80%;
+}
+
+.img {
+    width: 60%;
+}
+
+.weather-container,
+.weather-details {
+    scale: 0;
+    opacity: 0;
+}
+
+.weather-container {
+    width: 100%;
+    display: none; /* none  para flex   */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.weather {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.temperature,
+.description {
+    font-size: 1.125em;
+    flex-wrap: wrap;
+}
+
+.weather-details {
+    padding-top: 3.5rem;
+    width: 100%;
+    display: none;
+    justify-content: space-around;
+}
+
+.humidity,
+.wind {
+    display: flex;
+    gap: 10px;
+}
+
+.humidity .icon,
+.wind .icon {
+    width: 35px;
+}
+
+.humidity-text,
+.wind-text {
+    visibility: hidden;
 }
 
 footer {
@@ -121,13 +177,31 @@ footer ul li {
 }
 
 footer ul li a {
-    font-size: 32px;
+    font-size: 30px;
 }
+
+.fadeIn {
+    animation: fadeIn 0.5s forwards;
+    animation-delay: 0.2s;
+}
+
+@keyframes fadeIn {
+    to {
+        scale: 1;
+        opacity: 1;
+    }
+}
+
+.container-height {
+    height: 75%;
+}
+
+/* 
 
 .weather-container {
     width: 100%;
-    display: none; /**none  para flex*/
-    flex-direction: column;
+    display: none; none  para flex */
+/* flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 30px;
@@ -139,105 +213,110 @@ footer ul li a {
     gap: 50px;
 }
 
-.temperature,
-.description {
-    font-size: 1.5em;
-}
+*/
 
-.weather-container,
-.weather-details {
-    scale: 0;
-    opacity: 0;
-}
-
-.weather-details {
-    position: absolute;
-    bottom: 5%;
-    width: 100%;
-    display: none;
-
-    justify-content: space-around;
-}
-
-.humidity {
-    display: flex;
-    gap: 10px;
-}
-
-.wind {
-    gap: 10px;
-    display: flex;
-}
-
-.humidity-text,
-.wind-text {
-    visibility: hidden;
-}
-
-.icon {
-    width: 50px;
-    height: 50px;
-    font-size: 50px;
-}
-
-.text span {
-    visibility: hidden;
-}
-
-.fadeIn {
-    animation: fadeIn 0.5s forwards;
-    animation-delay: 0.2s;
-}
-
-#btnLocation {
-    cursor: pointer;
-}
-
-@keyframes fadeIn {
-    to {
-        scale: 1;
-        opacity: 1;
+@media screen and (min-width: 320px) and (max-width: 425px) {
+    .weather-details {
+        padding-top: 2rem;
     }
 }
 
-@media screen and (max-width: 1240px) {
+@media screen and (min-width: 425px) and (max-width: 500px) {
+    .img {
+        width: 45%;
+    }
+}
+
+@media screen and (min-width: 1200px) {
     .container {
-        width: 80%;
-        max-width: 700px;
+        width: 30%;
     }
-
     .img {
-        width: 35%;
-    }
-}
-
-@media screen and (min-width: 461px) and (max-width: 570px) {
-    .img {
-        width: 60%;
-    }
-}
-
-@media screen and (max-width: 460px) {
-    .container {
-        width: 100%;
-    }
-
-    .img {
-        width: 60%;
-    }
-    .container-search-city input {
         width: 50%;
     }
 
-    .container-search-city input::placeholder {
-        color: transparent;
+    .container-input input {
+        font-size: 1rem;
     }
 
-    .container-search-city label p {
-        display: none;
+    .container-input input::placeholder {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 436px) and (min-height: 700px) and (max-height: 932px) {
+    .container {
+        padding: 1.25rem;
+    }
+
+    .container-input {
+        padding-top: 1rem;
+    }
+
+    .img {
+        width: 70%;
+    }
+
+    .weather-details {
+        padding-top: 6.5rem;
+    }
+}
+
+/* iPads */
+@media screen and (min-width: 768px) and (max-width: 1024px) and (min-height: 1024px) and (max-height: 1368px) {
+    .container {
+        padding: 3rem;
+    }
+
+    .container-input {
+        padding-top: 1rem;
+    }
+
+    #btnSubmit {
+        font-size: 2rem;
+    }
+
+    .container-input input {
+        font-size: 1.25rem;
+    }
+
+    .container-input input::placeholder {
+        font-size: 1.25rem;
+    }
+
+    .not-found p {
+        font-size: 1.5rem;
+    }
+
+    .img {
+        width: 50%;
+    }
+
+    .weather p {
+        font-size: 2.5rem;
+    }
+
+    .text {
+        font-size: 2rem;
     }
 
     .icon {
-        width: 40px;
+        height: 40px;
+        width: 100px;
+        font-size: 3rem;
+    }
+
+    .weather-details {
+        padding-top: 7rem;
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1280px) and (min-height: 600px) and (max-height: 800px) {
+    .img {
+        width: 20%;
+    }
+
+    .container-height {
+        height: 80%;
     }
 }

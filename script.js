@@ -25,9 +25,9 @@ async function searchCity(city) {
     const weatherAPIURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&lang=pt_br&appid=${weatherAPIKey}`;
 
     const container = document.querySelector(".container");
-    const weatherDetails = document.querySelector(".weather-details");
     const notFound = document.querySelector(".not-found");
     const weatherContainer = document.querySelector(".weather-container");
+    const weatherDetails = document.querySelector(".weather-details");
 
     if ((notFound.style.display = "block")) {
         notFound.style.display = "none";
@@ -43,14 +43,15 @@ async function searchCity(city) {
 
     if (data.cod === "404") {
         const error404 = document.querySelector(".error404");
-        container.style.height = "75%";
+        container.classList.add("container-height");
         weatherContainer.style.display = "none";
         weatherDetails.style.display = "none";
         notFound.style.display = "block";
         error404.classList.add("fadeIn");
         return;
     }
-    container.style.height = "75%";
+
+    container.classList.add("container-height");
 
     const img = document.querySelector(".img");
     switch (data.weather[0].main) {
