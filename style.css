@@ -120,6 +120,10 @@ body {
     align-items: center;
     gap: 30px;
 }
+.weather-container-img {
+    display: flex;
+    justify-content: center;
+}
 
 .weather {
     width: 100%;
